@@ -8,6 +8,7 @@ const UpdateUser = () => {
   const { uid } = useParams();
   const [name, setAddName] = useState("");
   const [username, setAddUserName] = useState("");
+  const navigate = useNavigate();
 
   //for single data fetch
   useEffect(() => {
@@ -25,7 +26,7 @@ const UpdateUser = () => {
     });
     await navigate("/");
   };
-  const navigate = useNavigate();
+
   return (
     <div>
       <Container className=" mt-10  flex items-center justify-center">
