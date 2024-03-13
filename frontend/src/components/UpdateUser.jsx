@@ -18,12 +18,12 @@ const UpdateUser = () => {
       });
   }, []);
 
-  const UpdateOne = () => {
+  const UpdateOne = async () => {
     axios.put(`https://user-management-app-bay.vercel.app/update/${uid}`, {
       name,
       username,
     });
-    navigate("/");
+    await navigate("/");
   };
   const navigate = useNavigate();
   return (
