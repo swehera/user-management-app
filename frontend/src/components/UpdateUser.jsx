@@ -19,7 +19,7 @@ const UpdateUser = () => {
       });
   }, []);
 
-  const UpdateOne = async (uid) => {
+  const UpdateOne = async () => {
     axios.put(`https://user-management-app-bay.vercel.app/update/${uid}`, {
       name,
       username,
