@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(
   cors({
-    origin: ["letter add link"],
+    origin: ["https://user-manage-app-five.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
