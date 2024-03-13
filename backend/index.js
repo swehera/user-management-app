@@ -6,7 +6,13 @@ const app = express();
 
 const port = 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["letter add link"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
