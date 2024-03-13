@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   const AllUser = async () => {
-    axios.get("http://localhost:3000/home").then((res) => {
+    axios.get("https://user-management-app-bay.vercel.app/home").then((res) => {
       if (res?.status === 200) {
         setUser(res?.data);
       } else {
@@ -28,15 +28,17 @@ const Hero = () => {
 
   //delete user
   const deleteUser = async (id) => {
-    axios.delete(`http://localhost:3000/delete/${id}`).then((res) => {
-      if (res?.status === 200) {
-        AllUser();
-        navigate("/");
-        toast.error("Deleted Successfully");
-      } else {
-        toast.error("data not found");
-      }
-    });
+    axios
+      .delete(`https://user-management-app-bay.vercel.app/delete/${id}`)
+      .then((res) => {
+        if (res?.status === 200) {
+          AllUser();
+          navigate("/");
+          toast.error("Deleted Successfully");
+        } else {
+          toast.error("data not found");
+        }
+      });
   };
 
   //update user

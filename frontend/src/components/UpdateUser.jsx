@@ -11,13 +11,15 @@ const UpdateUser = () => {
 
   //for single data fetch
   useEffect(() => {
-    axios.get(`http://localhost:3000/update/${uid}`).then((res) => {
-      setAddName(res?.data?.name), setAddUserName(res?.data?.username);
-    });
+    axios
+      .get(`https://user-management-app-bay.vercel.app/update/${uid}`)
+      .then((res) => {
+        setAddName(res?.data?.name), setAddUserName(res?.data?.username);
+      });
   }, []);
 
   const UpdateOne = () => {
-    axios.put(`http://localhost:3000/update/${uid}`, {
+    axios.put(`https://user-management-app-bay.vercel.app/${uid}`, {
       name,
       username,
     });

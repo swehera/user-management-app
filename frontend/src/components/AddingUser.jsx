@@ -15,7 +15,7 @@ const AddingUser = () => {
     } else if (username == "") {
       toast.error("enter the username");
     } else {
-      axios.post("http://localhost:3000/post", {
+      axios.post("https://user-management-app-bay.vercel.app/post", {
         name,
         username,
       });
