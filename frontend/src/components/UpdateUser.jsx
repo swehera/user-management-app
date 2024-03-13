@@ -28,7 +28,8 @@ const UpdateUser = () => {
       name,
       username,
     });
-    await navigate("/");
+    GetUpdateOne();
+    navigate("/");
   };
 
   return (
