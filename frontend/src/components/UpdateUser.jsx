@@ -12,12 +12,16 @@ const UpdateUser = () => {
 
   //for single data fetch
   useEffect(() => {
+    GetUpdateOne();
+  }, []);
+
+  const GetUpdateOne = () => {
     axios
       .get(`https://user-management-app-bay.vercel.app/update/${uid}`)
       .then((res) => {
         setAddName(res?.data?.name), setAddUserName(res?.data?.username);
       });
-  }, []);
+  };
 
   const UpdateOne = async () => {
     axios.put(`https://user-management-app-bay.vercel.app/update/${uid}`, {
