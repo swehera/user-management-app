@@ -10,16 +10,14 @@ const Hero = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
-  const AllUser = async () => {
-    await axios
-      .get("https://user-management-app-bay.vercel.app/home")
-      .then((res) => {
-        if (res?.status === 200) {
-          setUser(res?.data);
-        } else {
-          console.log("data feteching error");
-        }
-      });
+  const AllUser = () => {
+    axios.get("https://user-management-app-bay.vercel.app/home").then((res) => {
+      if (res?.status === 200) {
+        setUser(res?.data);
+      } else {
+        console.log("data feteching error");
+      }
+    });
   };
 
   useEffect(() => {
