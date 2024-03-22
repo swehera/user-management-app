@@ -10,11 +10,6 @@ const UpdateUser = () => {
   const [username, setAddUserName] = useState("");
   const navigate = useNavigate();
 
-  //for single data fetch
-  useEffect(() => {
-    GetUpdateOne();
-  }, []);
-
   const GetUpdateOne = () => {
     axios
       .get(`https://user-management-app-bay.vercel.app/update/${uid}`)
@@ -22,6 +17,11 @@ const UpdateUser = () => {
         setAddName(res?.data?.name), setAddUserName(res?.data?.username);
       });
   };
+
+  //for single data fetch
+  useEffect(() => {
+    GetUpdateOne();
+  }, []);
 
   const UpdateOne = () => {
     axios
