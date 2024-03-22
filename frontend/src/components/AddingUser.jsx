@@ -9,7 +9,8 @@ const AddingUser = () => {
   const [username, setAddUserName] = useState("");
   const navigate = useNavigate();
 
-  const AddUser = () => {
+  const AddUser = (e) => {
+    e.preventDefault();
     if (name == "") {
       toast.error("enter the name");
     } else if (username == "") {
