@@ -57,7 +57,7 @@ const Hero = () => {
       <div className=" mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
         {user
           .filter((item) => {
-            return search.toLowerCase() || search.toUpperCase() === ""
+            return search.toLowerCase() === ""
               ? item
               : item.name.toLowerCase().includes(search);
           })
