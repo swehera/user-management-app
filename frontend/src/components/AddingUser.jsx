@@ -16,14 +16,17 @@ const AddingUser = () => {
     } else if (username == "") {
       toast.error("enter the username");
     } else {
-      axios.post("https://user-management-app-bay.vercel.app/post", {
-        name,
-        username,
-      });
-      setAddName("");
-      setAddUserName("");
-      navigate("/");
-      toast.success("User Added");
+      axios
+        .post("https://user-management-app-bay.vercel.app/post", {
+          name,
+          username,
+        })
+        .then(() => {
+          setAddName("");
+          setAddUserName("");
+          navigate("/");
+          toast.success("User Added");
+        });
     }
   };
 
