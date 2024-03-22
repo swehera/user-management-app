@@ -11,13 +11,15 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const AllUser = async () => {
-    axios.get("https://user-management-app-bay.vercel.app/home").then((res) => {
-      if (res?.status === 200) {
-        setUser(res?.data);
-      } else {
-        console.log("data feteching error");
-      }
-    });
+    await axios
+      .get("https://user-management-app-bay.vercel.app/home")
+      .then((res) => {
+        if (res?.status === 200) {
+          setUser(res?.data);
+        } else {
+          console.log("data feteching error");
+        }
+      });
   };
 
   useEffect(() => {
