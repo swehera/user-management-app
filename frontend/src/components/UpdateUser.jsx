@@ -15,8 +15,7 @@ const UpdateUser = () => {
     GetUpdateOne();
   }, []);
 
-  const GetUpdateOne = (e) => {
-    e.preventDefault();
+  const GetUpdateOne = () => {
     axios
       .get(`https://user-management-app-bay.vercel.app/update/${uid}`)
       .then((res) => {
