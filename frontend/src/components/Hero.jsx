@@ -10,10 +10,6 @@ const Hero = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    AllUser();
-  }, []);
-
   const AllUser = async () => {
     axios.get("https://user-management-app-bay.vercel.app/home").then((res) => {
       if (res?.status === 200) {
@@ -23,6 +19,11 @@ const Hero = () => {
       }
     });
   };
+
+  useEffect(() => {
+    AllUser();
+  }, []);
+
   console.log(user);
   console.log(search);
 
