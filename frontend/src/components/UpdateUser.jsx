@@ -15,7 +15,8 @@ const UpdateUser = () => {
     GetUpdateOne();
   }, []);
 
-  const GetUpdateOne = () => {
+  const GetUpdateOne = (e) => {
+    e.preventDefault();
     axios
       .get(`https://user-management-app-bay.vercel.app/update/${uid}`)
       .then((res) => {
@@ -23,13 +24,16 @@ const UpdateUser = () => {
       });
   };
 
-  const UpdateOne = async () => {
-    axios.put(`https://user-management-app-bay.vercel.app/update/${uid}`, {
-      name,
-      username,
-    });
-    GetUpdateOne();
-    navigate("/");
+  const UpdateOne = () => {
+    axios
+      .put(`https://user-management-app-bay.vercel.app/update/${uid}`, {
+        name,
+        username,
+      })
+      .then(() => {
+        GetUpdateOne();
+        navigate("/");
+      });
   };
 
   return (
